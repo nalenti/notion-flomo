@@ -40,6 +40,14 @@ class Flomo2Notion:
             "更新时间": notion_utils.get_date(memo['updated_at']),
             "来源": notion_utils.get_select(memo['source']),
             "链接数量": notion_utils.get_number(memo['linked_count']),
+            "中转": {
+                "relation": [
+                    {
+                        "id": "37fe07b95005800483dfc6b1ceff3467"
+                    }
+                ]
+            },
+
         }
 
         random_cover = random.choice(cover)
