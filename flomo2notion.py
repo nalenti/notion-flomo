@@ -58,9 +58,9 @@ class Flomo2Notion:
     def update_memo(self, memo, page_id):
         print("update_memo:", memo)
 
-        content_md = markdownify(memo['content'])
-        # 只更新内容
-        content_text = html2text.html2text(memo['content'])
+        content_md = markdownify(memo['content']) if memo.get('content') else ""
+    # 只更新内容
+    content_text = html2text.html2text(memo['content']) if memo.get('content') else ""
         properties = {
             "标题": notion_utils.get_title(
                 truncate_string(content_text)
